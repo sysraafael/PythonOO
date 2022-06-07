@@ -1,12 +1,24 @@
 class Animes:
     def __init__(self, nome, ano, episodios):
-        self.nome = nome.title()
+        self.__nome = nome.title()
         self.ano = ano
         self.episodios = episodios
-        self.likes = 0
+        self.__likes = 0
+
+    @property
+    def likes(self):
+        return self.__likes
 
     def dar_like(self):
-        self.likes += 1
+        self.__likes += 1
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @nome.setter
+    def nome(self, nome_nome):
+        self.__nome = novo_nome.title()
 
 
 jujutsuKaisen = Animes("Jujutsu Kaisen", 2018, 24)
@@ -19,13 +31,32 @@ print(f'Nome: {jujutsuKaisen.nome}, - Ano {jujutsuKaisen.ano} '
 
 class Serie:
     def __init__(self, nome, ano, temporadas):
-        self.nome = nome.title()
+        self.__nome = nome.title()
         self.ano = ano
         self.temporadas = temporadas
-        self.likes = 0
+        self.__likes = 0
+
+    @property
+    def likes(self):
+        return self.__likes
 
     def dar_like(self):
         self.likes += 1
+
+    @property
+    def likes(self):
+        return self.__likes
+
+    def dar_like(self):
+        self.__likes += 1
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @nome.setter
+    def nome(self, nome_nome):
+        self.__nome = novo_nome.title()
 
 
 strangerthings = Serie("Stranger Things", 2016, 4)
