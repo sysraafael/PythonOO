@@ -1,65 +1,59 @@
-class Animes:
+#Classe Mae
+
+class programa:
+    def __init__(self, nome, ano):
+        self._nome = nome.title()
+        self.ano = ano
+        self._likes = 0
+
+    @property
+    def likes(self):
+        return self._likes
+
+    def dar_likes(self):
+        self._likes += 1
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @nome.setter
+    def nome(self, nome_nome):
+        self._nome = novo_nome.title()
+
+    def __str__(self):
+        return f'Nome: {self.nome} Likes: {self.likes}'
+
+#Classe Filha
+
+class Animes(programa):
     def __init__(self, nome, ano, episodios):
-        self.__nome = nome.title()
-        self.ano = ano
+        super().__init__(nome, ano)
         self.episodios = episodios
-        self.__likes = 0
 
-    @property
-    def likes(self):
-        return self.__likes
+    def __str__(self):
+        return f'Nome: {self.nome} - {self.episodios} min - Likes: {self.likes}'
 
-    def dar_like(self):
-        self.__likes += 1
+#Classe Filha
 
-    @property
-    def nome(self):
-        return self.__nome
-
-    @nome.setter
-    def nome(self, nome_nome):
-        self.__nome = novo_nome.title()
-
-
-jujutsuKaisen = Animes("Jujutsu Kaisen", 2018, 24)
-jujutsuKaisen.dar_like()
-jujutsuKaisen.dar_like()
-print(f'Nome: {jujutsuKaisen.nome}, - Ano {jujutsuKaisen.ano} ' 
-
-      f' - Episodios: {jujutsuKaisen.episodios} - Likes: {jujutsuKaisen.likes} ')
-
-
-class Serie:
+class Serie(programa):
     def __init__(self, nome, ano, temporadas):
-        self.__nome = nome.title()
-        self.ano = ano
+        super().__init__(nome, ano)
         self.temporadas = temporadas
-        self.__likes = 0
 
-    @property
-    def likes(self):
-        return self.__likes
+    def __str__(self):
+        return f'Nome: {self.nome} - {self.temporadas} min - Likes: {self.likes}'
 
-    def dar_like(self):
-        self.likes += 1
+jujutsukaisen = Animes('Jujutsu Kaisen', 2018, 24)
+jujutsukaisen.dar_likes()
+jujutsukaisen.dar_likes()
+jujutsukaisen.dar_likes()
 
-    @property
-    def likes(self):
-        return self.__likes
+strangerthings = Serie('Stranger Things', 2016, 4)
+strangerthings.dar_likes()
+strangerthings.dar_likes()
 
-    def dar_like(self):
-        self.__likes += 1
+listinha = [jujutsukaisen, strangerthings]
 
-    @property
-    def nome(self):
-        return self.__nome
-
-    @nome.setter
-    def nome(self, nome_nome):
-        self.__nome = novo_nome.title()
-
-
-strangerthings = Serie("Stranger Things", 2016, 4)
-strangerthings.dar_like()
-print(f'Nome: {strangerthings.nome} - Ano: {strangerthings.ano} '
-      f' - Temporadas {strangerthings.temporadas} - Likes: {strangerthings.likes} ')
+for programa in listinha:
+    print(programa)
