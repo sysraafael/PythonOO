@@ -8,7 +8,6 @@ class Conta:
         self.__saldo = saldo
         self.__limite = limite
 
-
     def extrato(self):
         print("Saldo de {} do titular {}".format(self.__saldo, self.__titular))
 
@@ -18,7 +17,6 @@ class Conta:
     def __pode_sacar(self, valor_a_sacar):
         valor_disponivel_para_saque = self.__saldo + self.__limite
         return valor_a_sacar <= valor_disponivel_para_saque 
-
 
     def saca(self, valor):
         if(self.__pode_sacar(valor)):   
